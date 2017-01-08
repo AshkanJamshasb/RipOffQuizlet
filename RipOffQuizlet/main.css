@@ -1,0 +1,40 @@
+body {
+	background-color: lightsteelblue;
+}
+.wholePage {
+	list-style-type: none;
+}
+.selection {
+	padding: 0;
+	list-style-type: none;
+}
+.topPage {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0;
+}
+.flashCardExamples {
+	height: 250px;
+	display: inline-block;
+}
+.flashCardsUniversal {
+	height:500px;
+}
+.pageIdentifier {
+	display:inline-block;padding-left:20px;
+}
+.tallButton {
+    background-color: white;
+    padding: 120px 6px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 4px;
+    cursor: pointer;
+}
+
+#location {
+	margin: 0;
+}
+#image {
+    cursor: pointer;
+}

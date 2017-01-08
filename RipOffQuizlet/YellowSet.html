@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>YellowSet</title>
+		<style type="text/css" media="screen"></style>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script src="navi.js"></script>
+		<script type="text/javascript">
+			var column = 0;
+			var flip = 0;
+			var row = 0;
+			//maxVal is the number of flashcards - 1 (the max value for the array)
+			var maxVal = 10;
+			var height = 2;
+			var length = maxVal+1;
+			
+			//Create array here and assign here
+			var cardsArray = new Array();
+
+			for (i = 0; i < height; i++) {
+				cardsArray[i] = new Array();
+				for (j = 0; j < length; j++) {
+					cardsArray[i][j] = new Image();
+					i==0?cardsArray[i][j].src = "Images/PreCalFlashCards/Yellow/YellowFronts/yf" + Number(j+1) + ".jpg":cardsArray[i][j].src = "Images/PreCalFlashCards/Yellow/YellowBacks/yb" + Number(j+1) + ".jpg";
+				}
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<ul class="wholePage">
+			<li><ul class="topPage">
+				<li  class="topPage"><h1><a href="ChooseSet.html">< Back</a></h1></li>
+				<li class="pageIdentifier"><h1>Yellow: Vectors</h1></li>
+				<p id="location">Front> Number: 1/11</p>
+			</ul></li>
+			<li><img class="flashCardsUniversal" src="Images/PreCalFlashCards/Yellow/YellowFronts/yf1.jpg" id="image" title="Card" onClick="flip++;row=flip%2;changeImage(row, column, maxVal)"/></li>
+			<li><div>
+				<input type="button" value="Back" onClick="column>0?column--:column=column;row=0;flip=0;changeImage(row, column, maxVal)"/>
+				<input type="button" value="Flip" onClick="flip++;row=flip%2;changeImage(row, column, maxVal)"/>
+				<input type="button" value="Next" onClick="column<10?column++:column=column;row=0;flip=0;changeImage(row, column, maxVal)"/>
+			</div></li>
+		</ul>
+	</body>
+
+</html>
+

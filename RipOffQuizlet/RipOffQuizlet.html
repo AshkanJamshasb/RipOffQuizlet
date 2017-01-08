@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>RipOffQuizlet</title>
+		<style type="text/css" media="screen"></style>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script src="navi.js"></script>
+		<script type="text/javascript">
+			var column = 0;
+			var flip = 0;
+			var row = 0;
+			var maxVal = 5;
+			var height = 2;
+			var length = maxVal+1;
+			
+			//Create array here
+			var cardsArray = new Array();
+
+			for (i = 0; i < height; i++) {
+				cardsArray[i] = new Array();
+				for (j = 0; j < length; j++) {
+					cardsArray[i][j] = new Image();
+				}
+			}
+
+			//Assign values here
+			for (var i = 0; i < height; i++) {
+				for (var j = 0; j < length; j++) {
+					if (i == 0) {
+						cardsArray[i][j].src = "Images/Examples/f" + j + ".jpg";
+					}
+					if (i == 1) {
+						cardsArray[i][j].src = "Images/Examples/b" + j + ".jpg";
+					}
+				}
+			}
+
+		</script>
+	</head>
+
+	<body>
+
+		<ul class="wholePage">
+			<li><ul class="topPage">
+				<li class="topPage">
+					<h1>
+						<a href="ChooseSet.html">Choose Set</a> 
+					</h1>
+				</li>
+				<br>
+				<li class="topPage"><h1 style="margin:0;">Coin</h1></li>
+				<p id="location">Row:0 Column:0 <^> Front__ Number: 1/6</p>
+			</ul></li>
+			<p class="topPage">
+<!-- 					<input class="tallButton" type="button" value="<" onClick="column>0?column--:column=column;row=0;flip=0;changeImage(row, column, maxVal)" /> -->
+					<img class="flashCardExamples" id="image" src="Images/Examples/f0.jpg" title="Card" title="Cards" onClick="flip++;row=flip%2;changeImage(row, column, maxVal)"/>
+		<!-- 			<input class="tallButton" type="button" value=">" onClick="column<5?column++:column=column;row=0;flip=0;changeImage(row, column, maxVal)"/> -->
+			</p>
+			<li><div style="padding-left:62.5px;padding-top:15px;">
+				<input type="button" value="Back" onClick="column>0?column--:column=column;row=0;flip=0;changeImage(row, column, maxVal)"/>
+				<input type="button" value="Flip" onClick="flip++;row=flip%2;changeImage(row, column, maxVal)"/>
+				<input type="button" value="Next" onClick="column<5?column++:column=column;row=0;flip=0;changeImage(row, column, maxVal)"/>	
+		</div></li>
+		</ul>
+	</body>
+
+</html>
